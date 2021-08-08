@@ -1,3 +1,22 @@
+function prepareGallery() {
+	if (!document.getElementsByTagName) {
+		return false
+	}
+	if (!document.getElementById) {
+		return false
+	}
+	if (!document.getElementById('imagegallery')) {
+		return false
+	}
+	const gallery = document.getElementById('imagegallery')
+	const links = gallery.getElementsByTagName('a')
+	for (let i = 0; i < links.length; i++) {
+		links[i].onclick = function () {
+			return showPic(this) ? false : true
+		}
+	}
+}
+
 function showPic(whichpic) {
 	if (!document.getElementById('placeholder')) return false
 	const source = whichpic.getAttribute('href')
@@ -13,25 +32,6 @@ function showPic(whichpic) {
 		}
 	}
 	return true
-}
-
-function prepareGallery() {
-	if (!document.getElementsByTagName) {
-		return false
-	}
-	if (!document.getElementById) {
-		return false
-	}
-	if (!document.getElementById('imagegallery')) {
-		return false
-	}
-	const gallery = document.getElementById('imagegallery')
-	const links = gallery.getElementsByTagName('a')
-	for (let i = 0; i < links.length; i++) {
-		links[i].onclick = function () {
-			return !showPic(this)
-		}
-	}
 }
 
 function addLoadEvent(func) {
