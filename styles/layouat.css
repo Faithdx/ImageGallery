@@ -43,7 +43,7 @@ a:hover {
   color: #fff;
 } */
 
-.img_box>img {
+#placeholder {
   display: block;
   clear: both;
   width: 400px;
