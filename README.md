@@ -1,2 +1,2 @@
 # ImageGallery
-### JavaScript图片库 Demo
+### JavaScript Image Gallery 
